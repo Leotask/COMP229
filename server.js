@@ -36,7 +36,8 @@ app.engine('ejs', require('ejs').__express);
 app.use('/', require('./app/routes/index.server.routes.js'));
 
 // Serve static files from the 'public'directories
-app.use(express.static('./public'));
+//app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, './public')));
 
 // Handle a POST request to '/' and redirect to the root path ('/')
 app.post('/', (req, res) => {
