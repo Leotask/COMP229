@@ -30,9 +30,8 @@ app.set('view engine', 'ejs'); // Set the view engine to EJS
 // Define routes using the 'index.server.routes.js' file
 app.use('/', require('./app/routes/index.server.routes.js'));
 
-// Serve static files from the 'public' and 'node_modules' directories
+// Serve static files from the 'public'directories
 app.use(express.static('./public'));
-app.use(express.static("./node_modules"));
 
 // Handle a POST request to '/submitForm' and redirect to the root path ('/')
 app.post('/submitForm', (req, res) => {
@@ -48,3 +47,4 @@ module.exports = app;
 
 // Log a message to the console indicating that the server is running
 console.log('Server is running at http://localhost:3000/');
+
