@@ -5,6 +5,7 @@ var morgan = require('morgan'); // Middleware for logging HTTP requests
 var compress = require('compression'); // Middleware for response compression
 var bodyParser = require('body-parser'); // Middleware for parsing request bodies
 var methodOverride = require('method-override'); // Middleware for HTTP method override
+const path = require('path');
 
 var app = express(); // Create an Express application instance
 
@@ -24,7 +25,8 @@ app.use(bodyParser.json());
 
 app.use(methodOverride()); // Enable method override for handling HTTP methods
 
-app.set('views', './app/views'); // Set the directory for views/templates
+//app.set('views', './app/views'); // Set the directory for views/templates
+app.set('views', path.join(__dirname, './app/views'));
 app.set('view engine', 'ejs'); // Set the view engine to EJS
 
 // Define routes using the 'index.server.routes.js' file
