@@ -5,7 +5,7 @@ var morgan = require('morgan'); // Middleware for logging HTTP requests
 var compress = require('compression'); // Middleware for response compression
 var bodyParser = require('body-parser'); // Middleware for parsing request bodies
 var methodOverride = require('method-override'); // Middleware for HTTP method override
-const path = require('path');
+const path = require('path'); // Import the 'path' module to work with file paths
 
 var app = express(); // Create an Express application instance
 
@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 
 app.use(methodOverride()); // Enable method override for handling HTTP methods
 
+//vercel does not support these code
 //app.set('views', './app/views'); // Set the directory for views/templates
 //app.set('view engine', 'ejs'); // Set the view engine to EJS
 
