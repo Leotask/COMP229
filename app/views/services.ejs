@@ -1,0 +1,26 @@
+<!--Hoi Yeung Suen, 301314454, 30/9/2023,Fall 2023-->
+<%- include ('partials/header.ejs') %>
+    <%- include ('partials/main_nav.ejs') %>
+
+
+        <link rel="stylesheet" href="Content/style.css" />
+        <main class="container">
+            <div class="middle">
+                <div class="jumbotron">
+
+                    <h1>Welcome to <%= title %> Page</h1>
+                </div>
+                <div class="basicinfo" style="background-image: url('img/sea.jpg'); background-repeat: no-repeat;">
+                    <h2>Services I provide</h2>
+                    <ul>
+                        <li>Microsoft Word, Excel, PowerPoint</li>
+                        <li>Programming</li>
+                        <li>UX/UI design</li>
+                        <li>Orcale SQL</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <%- include ('partials/bottom_nav.ejs') %>
+            <%- include ('partials/footer.ejs') %>
