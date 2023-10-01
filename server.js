@@ -26,8 +26,11 @@ app.use(bodyParser.json());
 app.use(methodOverride()); // Enable method override for handling HTTP methods
 
 //app.set('views', './app/views'); // Set the directory for views/templates
+//app.set('view engine', 'ejs'); // Set the view engine to EJS
+
 app.set('views', path.join(__dirname, './app/views'));
-app.set('view engine', 'ejs'); // Set the view engine to EJS
+app.set('view engine', 'ejs');
+app.engine('ejs', require('ejs').__express);
 
 // Define routes using the 'index.server.routes.js' file
 app.use('/', require('./app/routes/index.server.routes.js'));
@@ -35,8 +38,8 @@ app.use('/', require('./app/routes/index.server.routes.js'));
 // Serve static files from the 'public'directories
 app.use(express.static('./public'));
 
-// Handle a POST request to '/submitForm' and redirect to the root path ('/')
-app.post('/submitForm', (req, res) => {
+// Handle a POST request to '/' and redirect to the root path ('/')
+app.post('/', (req, res) => {
     const formData = req.body;
     res.redirect('/');
 });
